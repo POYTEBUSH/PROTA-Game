@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
 {
     public float Morale;
     public float Hunger;
+    public float Hydration;
     public float Cleanliness;
     public float Warmth;
 
@@ -12,7 +13,7 @@ public class Player : MonoBehaviour
     private int MaxMoneyStore;
     public string Name;
 
-    public int Level;
+    public int Level = 1;
     public float Experience;
     public int DaysSurvived;
 
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
         Mathf.Clamp(Warmth, 0f, 1f);
         Mathf.Clamp(Money, 0f, MaxMoneyStore);
 
+        Experience++;
         CheckLevelProgress();
     }
 
