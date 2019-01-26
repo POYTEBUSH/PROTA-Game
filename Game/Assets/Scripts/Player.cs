@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -24,8 +25,29 @@ public class Player : MonoBehaviour
     private float ReduceRateCleanliness = 0.02f;
     private float ReduceRateWarmth = 0.02f;
 
+    RawImage HungerBarProg;
+
+    RawImage ThirstBarProg;
+    RawImage CleanBarProg;
+    RawImage WarmthBarProg;
+
+    RawImage MoraleBarProg;
+
+    public float UIHunger = 100f;
+    public float UIHydration = 100f;
+    public float UICleanliness = 100f;
+    public float UIWarmth = 100f;
+
+    public float UIMorale = 100f;
+
     private void Start()
     {
+        HungerBarProg = GameObject.Find("HungerBarProg").GetComponent<RawImage>();
+        ThirstBarProg = GameObject.Find("ThirstBarProg").GetComponent<RawImage>();
+        CleanBarProg = GameObject.Find("CleanlinessBarProg").GetComponent<RawImage>();
+        WarmthBarProg = GameObject.Find("WarmthBarProg").GetComponent<RawImage>();
+        MoraleBarProg = GameObject.Find("MoraleBarProg").GetComponent<RawImage>();
+
         Morale = 100f;
         Hunger = 100f;
         Hydration = 100f;
@@ -49,6 +71,8 @@ public class Player : MonoBehaviour
         Hydration = Mathf.Clamp(Hydration, 0f, 100f);
         Warmth = Mathf.Clamp(Warmth, 0f, 100f);
         Money = Mathf.Clamp(Money, 0f, MaxMoneyStore);
+
+        UpdateHUD();
 
         Experience++;
         CheckLevelProgress();
@@ -74,5 +98,30 @@ public class Player : MonoBehaviour
     public void SetMaxMoney(int MaxMoney)
     {
         Mathf.Clamp(Morale, 0f, 1f);
+    }
+
+    public void UpdateHUD()
+    {
+        UIHunger = Hunger / 100;
+        UIHydration = Hydration  / 100;
+        UICleanliness = Cleanliness / 100;
+        UIWarmth = Warmth / 100;
+        UIMorale = Morale / 100;
+
+        HungerBarProg.transform.localScale = new Vector3(UIHunger, 1, 1);
+        ThirstBarProg.transform.localScale = new Vector3(UIHydration, 1, 1);
+        CleanBarProg.transform.localScale = new Vector3(UICleanliness, 1, 1);
+        WarmthBarProg.transform.localScale = new Vector3(UIWarmth, 1, 1);
+
+        MoraleBarProg.transform.localScale = new Vector3(UIMorale, 1, 1);
+
+
+        //HungerBarProg.transform.position = new Vector3(-727.2, 1, 1);
+        //ThirstBarProg.transform.position = new Vector3(-727.2, 1, 1);
+        //CleanBarProg.transform.position = new Vector3(-727.2, 1, 1);
+        //WarmthBarProg.transform.position = new Vector3(-727.2, 1, 1);
+
+        //MoraleBarProg.transform.position = new Vector3(UIMorale, 1, 1);
+
     }
 }
