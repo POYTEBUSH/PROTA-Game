@@ -18,7 +18,7 @@ public class ShopManager : MonoBehaviour
     {
 
 
-        ShopItems = FileSystem.FromJson<ShopItem>("/EntityData/Shops/Go Sashimi.json").ToList();
+        ShopItems = FileSystem.FromJson<ShopItem>("/EntityData/Shops/FoodShop1.json").ToList();
         int count = 0;
         ShopItems = ShopItems.OrderBy(i => i.Cost).ToList();
         foreach (var item in ShopItems)
