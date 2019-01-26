@@ -11,7 +11,7 @@ public class ShopManager : MonoBehaviour {
     public int ShopId;
     public List<ShopItem> ShopItems;
     public GameObject ShopItemPrefab;
-
+    public Animation anim;
 	// Use this for initialization
 	void Start () {
 
@@ -52,9 +52,9 @@ public class ShopManager : MonoBehaviour {
             count++;
         }
 
-
+        anim.Play("SlideIn");
         int mej = 0;
-	}
+    }
 
     private Button.ButtonClickedEvent ShopItemBought(int i)
     {
