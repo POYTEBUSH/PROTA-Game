@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class NPC : MonoBehaviour
 
         if (staring && !paying)
         {
-
+            StartCoroutine(PayHomeless());
         }
     }
     
@@ -147,7 +148,7 @@ public class NPC : MonoBehaviour
         ///////////////////////////////////////////////////////////////////
         if (staring)
         {
-
+            GameObject.Find("Money Text").GetComponent<Text>().text = (int.Parse(GameObject.Find("Money Text").GetComponent<Text>().text) + Mathf.FloorToInt(Random.Range(minimumToPay, minimumToPay + 5))).ToString();
         }
 
         paying = false;

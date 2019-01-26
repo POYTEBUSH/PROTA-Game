@@ -84,7 +84,7 @@ public class PlayerManager : MonoBehaviour
     {
         if(AOEEffect)
         {
-            GameObject.FindGameObjectWithTag("AOEDisplay").GetComponent<Light>().spotAngle = AOERange;
+            GameObject.FindGameObjectWithTag("AOEDisplay").GetComponent<Light>().spotAngle = GetComponentInChildren<CapsuleCollider>().radius * 12.5f;
         }
         else
         {
