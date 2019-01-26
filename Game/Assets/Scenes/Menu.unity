@@ -1554,9 +1554,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065161884}
-        m_MethodName: FadeToLevel
-        m_Mode: 3
+      - m_Target: {fileID: 548518953}
+        m_MethodName: SetMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3152,9 +3152,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065161884}
-        m_MethodName: FadeToLevel
-        m_Mode: 3
+      - m_Target: {fileID: 548518953}
+        m_MethodName: SetMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3275,9 +3275,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065161884}
-        m_MethodName: FadeToLevel
-        m_Mode: 3
+      - m_Target: {fileID: 548518953}
+        m_MethodName: SetStat
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5275,9 +5275,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065161884}
-        m_MethodName: FadeToLevel
-        m_Mode: 3
+      - m_Target: {fileID: 548518953}
+        m_MethodName: SetSettings
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5322,74 +5322,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1350117447}
   m_CullTransparentMesh: 0
---- !u!1001 &1367010708
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4174580481617492, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174580481617492, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174580481617492, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174580481617492, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174580481617492, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174580481617492, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174580481617492, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174580481617492, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 223020701355317758, guid: 12054b47b4782394c8bba350847f346c,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1850912716}
-    - target: {fileID: 1967210487827550, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114200027002109650, guid: 12054b47b4782394c8bba350847f346c,
-        type: 2}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183863769804804, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4353771467619212, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1183863769804804, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-      propertyPath: m_Name
-      value: Level Changer (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 12054b47b4782394c8bba350847f346c, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1379418501
 GameObject:
   m_ObjectHideFlags: 0
@@ -5630,8 +5562,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1065161884}
-        m_MethodName: FadeToLevel
-        m_Mode: 3
+        m_MethodName: QuitGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6381,9 +6313,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065161884}
-        m_MethodName: FadeToLevel
-        m_Mode: 3
+      - m_Target: {fileID: 548518953}
+        m_MethodName: SetMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7124,9 +7056,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1065161884}
-        m_MethodName: FadeToLevel
-        m_Mode: 3
+      - m_Target: {fileID: 548518953}
+        m_MethodName: SetCredits
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
