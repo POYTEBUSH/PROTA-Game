@@ -17,6 +17,7 @@ public class ShopManager : MonoBehaviour {
 
 
         ShopItems = FileSystem.FromJson<ShopItem>("/EntityData/Shops/FoodShop1.json").ToList();
+        int count = 0;
         foreach (var item in ShopItems)
         {
             item.ModifierList = new Dictionary<StatType, float>();
@@ -28,11 +29,14 @@ public class ShopManager : MonoBehaviour {
             }
 
             var pref = GameObject.Instantiate(ShopItemPrefab, this.transform.GetChild(2));
+            var buttonInner = pref.transform.GetChild(0);
 
-            var image = pref.transform.GetChild(0);
+            pref.GetComponent<Button>().onClick = ShopItemBought(count);
+
+            var image = buttonInner.GetChild(0);
             image.GetComponent<Image>().sprite = Resources.Load<Sprite>("EntityIcons/" + item.SpriteName);
 
-            var textArea = pref.transform.GetChild(1).transform;
+            var textArea = buttonInner.GetChild(1).transform;
             textArea.GetChild(0).GetComponent<Text>().text = item.ItemName;
             textArea.GetChild(1).GetComponent<Text>().text = item.ItemDesc;
 
@@ -44,15 +48,26 @@ public class ShopManager : MonoBehaviour {
 
 
             CultureInfo gb = CultureInfo.GetCultureInfo("en-GB");
-            pref.transform.GetChild(2).transform.GetChild(0).GetComponent<Text>().text = item.Cost.ToString("c2", gb);
+            buttonInner.GetChild(2).transform.GetChild(0).GetComponent<Text>().text = item.Cost.ToString("c2", gb);
+            count++;
         }
 
 
         int mej = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private Button.ButtonClickedEvent ShopItemBought(int i)
+    {
+        var Player = GameObject.FindGameObjectWithTag("Player");
+        Player.GetComponent<PlayerManager>();
+
+        Debug.Log("Button");
+
+        return new Button.ButtonClickedEvent();
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
