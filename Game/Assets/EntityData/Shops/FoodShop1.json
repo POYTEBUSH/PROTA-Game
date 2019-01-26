@@ -1,0 +1,74 @@
+{
+    "Items": [
+		{
+			"ItemName":"Cup of Coffee",
+			"ItemDesc":"Staple of any office workers life",
+			"SpriteName":"coffeecup",
+			"Cost":"2",
+			"Modifiers":"1:5,2:10"
+		},
+		{
+			"ItemName":"Cup of Tea",
+			"ItemDesc":"Hot beverage favoured by Brits",
+			"SpriteName":"teacup",
+			"Cost":"1",
+			"Modifiers":"1:7,2:10"
+		},
+		{
+			"ItemName":"Pot of Tea",
+			"ItemDesc":"Hot beverage favoured by Brits, on the mega scale",
+			"SpriteName":"teapot",
+			"Cost":"3.5",
+			"Modifiers":"1:20,2:25"
+		},
+		{
+			"ItemName":"Steak Bake",
+			"ItemDesc":"Steaming hot pastie, caution will burn tongue!",
+			"SpriteName":"steakbake",
+			"Cost":"1.4",
+			"Modifiers":"0:10,2:15,1:-5"
+		},
+		{
+			"ItemName":"Sausage Roll",
+			"ItemDesc":"Simply a sausage in pastry, what more could you want?",
+			"SpriteName":"sausageroll",
+			"Cost":"0.9",
+			"Modifiers":"0:10,2:5,1:-5"
+		},
+		{
+			"ItemName":"Baguette",
+			"ItemDesc":"Stick of rock hard bread",
+			"SpriteName":"baguette",
+			"Cost":"0.8",
+			"Modifiers":"0:20,1:-5"
+		},
+		{
+			"ItemName":"Ploughman's Sandwhich",
+			"ItemDesc":"Cheese, onion and pickle in two slices of white",
+			"SpriteName":"ploughmans",
+			"Cost":"1.25",
+			"Modifiers":"0:15"
+		},
+		{
+			"ItemName":"Cheese Burger",
+			"ItemDesc":"Few slabs of meat in two buns with the addition of cheese",
+			"SpriteName":"burger",
+			"Cost":"4.5",
+			"Modifiers":"0:30,4:-20"
+		},
+		{
+			"ItemName":"Kebab",
+			"ItemDesc":"Does anybody really know what these are made of?",
+			"SpriteName":"kebab",
+			"Cost":"3.99",
+			"Modifiers":"0:25,1:-20"
+		},
+		{
+			"ItemName":"Chip Butty",
+			"ItemDesc":"Nobody cares what you call it, it's a roll tbh.",
+			"SpriteName":"chipbutty",
+			"Cost":"1.99",
+			"Modifiers":"0:20,2:10"
+		}
+	]
+}

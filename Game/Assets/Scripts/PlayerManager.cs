@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
     public float Morale = 100f;
     public float Hunger = 100f;
