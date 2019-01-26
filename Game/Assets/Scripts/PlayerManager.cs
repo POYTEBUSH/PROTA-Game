@@ -24,6 +24,8 @@ public class PlayerManager : MonoBehaviour
 
     RawImage MoraleBarProg;
 
+    Text MoneyCounter;
+
     public float UIHunger = 100f;
     public float UIHydration = 100f;
     public float UICleanliness = 100f;
@@ -44,6 +46,8 @@ public class PlayerManager : MonoBehaviour
         CleanBarProg = GameObject.Find("CleanlinessBarProg").GetComponent<RawImage>();
         WarmthBarProg = GameObject.Find("WarmthBarProg").GetComponent<RawImage>();
         MoraleBarProg = GameObject.Find("MoraleBarProg").GetComponent<RawImage>();
+
+        MoneyCounter = GameObject.Find("MoneyCounter").GetComponent<Text>();
 
         playerData = SaveSystem.LoadPlayerData();
 
@@ -130,6 +134,8 @@ public class PlayerManager : MonoBehaviour
 
         MoraleBarProg.transform.localScale = new Vector3(UIMorale, 1, 1);
 
+        float playMoney = playerData.Money;
+        MoneyCounter.text = playMoney.ToString();
 
         //HungerBarProg.transform.position = new Vector3(-727.2, 1, 1);
         //ThirstBarProg.transform.position = new Vector3(-727.2, 1, 1);
