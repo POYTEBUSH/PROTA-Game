@@ -26,7 +26,7 @@
 			"ItemDesc":"Miso enjoying this healthy soup",
 			"SpriteName":"miso",
 			"Cost":"2",
-			"Modifiers":"0:10,1:10,2:-10"
+			"Modifiers":"0:10,1:10,2:10"
 		},
 		{
 			"ItemName":"Vegetable Gyoza",
