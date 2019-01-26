@@ -20,3 +20,15 @@ public class ShopItem {
     public string Modifiers;
     public Dictionary<StatType, float> ModifierList;
 }
+
+[Serializable]
+public class ActionItem
+{
+    public string ActionName;
+    public string ActionDesc;
+    public string SpriteName;
+
+    public string Modifiers;
+    public int LevelRequired;
+    public Dictionary<StatType, float> ModifierList;
+}

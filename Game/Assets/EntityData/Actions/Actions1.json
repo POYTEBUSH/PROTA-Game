@@ -1,0 +1,46 @@
+{
+    "Items": [
+		{
+			"ActionName":"Beg for Money",
+			"ActionDesc":"Ask around, see if anyone can spare change",
+			"SpriteName":"moneybag",
+			"Modifiers":"0:-5,1:-2,2:-5,3:-2",
+			"LevelRequired":"1"
+		},
+		{
+			"ActionName":"Sing songs (Busk)",
+			"ActionDesc":"Street perform, try to gather a crowd",
+			"SpriteName":"microphone",
+			"Modifiers":"0:-2,1:-5,2:2,3:-5",
+			"LevelRequired":"3"
+		},
+		{
+			"ActionName":"Beatbox (Busk)",
+			"ActionDesc":"Maybe this will gather a younger crowd",
+			"SpriteName":"beatbox",
+			"Modifiers":"1:-4,2:-7,3:2",
+			"LevelRequired":"5"
+		},
+		{
+			"ActionName":"Perform as a One-Man-Band (Busk)",
+			"ActionDesc":"Street perform, try to gather a crowd",
+			"SpriteName":"onemanband",
+			"Modifiers":"0:-2,1:-5,2:2,3:-5",
+			"LevelRequired":"7"
+		},
+		{
+			"ActionName":"Street/Break Dance (Busk)",
+			"ActionDesc":"Will this attract the right crowd",
+			"SpriteName":"breakdance",
+			"Modifiers":"1:-5,2:5,3:-10",
+			"LevelRequired":"10"
+		},	
+		{
+			"ActionName":"Play Classical Music (Busk)",
+			"ActionDesc":"Attempt to wow the richer crowds",
+			"SpriteName":"violin",
+			"Modifiers":"2:-5,3:-5",
+			"LevelRequired":"15"
+		}	
+	]
+}
