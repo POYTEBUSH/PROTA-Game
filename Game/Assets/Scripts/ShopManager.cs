@@ -6,7 +6,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopManager : MonoBehaviour {
+public class ShopManager : MonoBehaviour
+{
 
     public int ShopId;
     public List<ShopItem> ShopItems;
@@ -31,7 +32,7 @@ public class ShopManager : MonoBehaviour {
             var pref = GameObject.Instantiate(ShopItemPrefab, this.transform.GetChild(2));
             var buttonInner = pref.transform.GetChild(0);
 
-            pref.GetComponent<Button>().onClick = ShopItemBought(count);
+            pref.GetComponent<Button>().onClick.AddListener(() => ShopItemBought(count));
 
             var image = buttonInner.GetChild(0);
             image.GetComponent<Image>().sprite = Resources.Load<Sprite>("EntityIcons/" + item.SpriteName);
@@ -56,14 +57,14 @@ public class ShopManager : MonoBehaviour {
         int mej = 0;
     }
 
-    private Button.ButtonClickedEvent ShopItemBought(int i)
+    public void ShopItemBought(int i)
     {
-        var Player = GameObject.FindGameObjectWithTag("Player");
-        Player.GetComponent<PlayerManager>();
+        //var Player = GameObject.FindGameObjectWithTag("Player");
+        //Player.GetComponent<PlayerManager>();
+
+        ChatLogger.SendChatMessage("Button Clicked", Color.white);
 
         Debug.Log("Button");
-
-        return new Button.ButtonClickedEvent();
     }
 
     // Update is called once per frame
