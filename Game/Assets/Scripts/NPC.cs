@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class NPC : MonoBehaviour
 {
 
-    Vector3 startPos = new Vector3(-10.0f, 0.42f, -9.5f);
+    Vector3 startPos = new Vector3(-10.0f, 0.07f, -9.5f);
     Vector3 velocity = new Vector3(1.0f, 0.0f, 0.0f);
     Vector3 otherVelocity = new Vector3(0.0f, 0.0f, 0.0f);
+
+    Quaternion initialRotation;
 
     bool facingLeft, staring, paying = false;
 
@@ -29,7 +31,10 @@ public class NPC : MonoBehaviour
         {
             startPos.x *= -1.0f;
             velocity.x *= -1.0f;
+            transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
         }
+
+        initialRotation = transform.localRotation;
 
         transform.localPosition = startPos;
 
@@ -72,6 +77,8 @@ public class NPC : MonoBehaviour
         {
             velocity.z = 0.0f;
         }
+        transform.localRotation = initialRotation;
+        rb.angularVelocity = Vector3.zero;
     }
 
     private void HandleNPCCollision()
