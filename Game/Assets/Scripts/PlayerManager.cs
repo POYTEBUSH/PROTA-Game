@@ -37,6 +37,8 @@ public class PlayerManager : MonoBehaviour
 
     public PlayerAction actionTimer;
 
+    private Animator animator;
+
     private void Start()
     { 
         HungerBarProg = GameObject.Find("HungerBarProg").GetComponent<RawImage>();
@@ -45,7 +47,9 @@ public class PlayerManager : MonoBehaviour
         WarmthBarProg = GameObject.Find("WarmthBarProg").GetComponent<RawImage>();
         MoraleBarProg = GameObject.Find("MoraleBarProg").GetComponent<RawImage>();
 
-        playerData = SaveSystem.LoadPlayerData();
+        animator = GetComponent<Animator>();
+
+        //playerData = SaveSystem.LoadPlayerData();
 
         ChatLogger.SendChatMessage("Game Started, Good luck!", Color.yellow);
         AOEEffect = true;
@@ -65,6 +69,11 @@ public class PlayerManager : MonoBehaviour
         ReduceStats();
 
         playerData.Morale = (playerData.Hunger + playerData.Cleanliness + playerData.Warmth + playerData.Hydration) / 4;
+
+        if (GameOver == true)
+        {
+            animator.Play("JumpOff");
+        }
 
         playerData.Morale = Mathf.Clamp(playerData.Morale, 0f, 100f);
         playerData.Hunger = Mathf.Clamp(playerData.Hunger, 0f, 100f);

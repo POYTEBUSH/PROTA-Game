@@ -6754,6 +6754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1547308200}
   - component: {fileID: 1547308201}
+  - component: {fileID: 1547308202}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6787,11 +6788,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData:
-    Morale: 0
-    Hunger: 0
-    Hydration: 0
-    Cleanliness: 0
-    Warmth: 0
+    Morale: 20
+    Hunger: 10
+    Hydration: 10
+    Cleanliness: 10
+    Warmth: 10
     Money: 0
     Name: 
     Level: 0
@@ -6806,6 +6807,24 @@ MonoBehaviour:
   AOEEffect: 1
   AOERange: 50
   actionTimer: {fileID: 0}
+--- !u!95 &1547308202
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1547308199}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b14781fd924903b4da5f704033cad6d9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1805647855
 GameObject:
   m_ObjectHideFlags: 0
