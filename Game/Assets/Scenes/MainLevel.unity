@@ -564,7 +564,6 @@ Transform:
   m_LocalPosition: {x: -1583.8842, y: -665.13885, z: -10.819666}
   m_LocalScale: {x: 2.7301, y: 1, z: 0.85598}
   m_Children: []
-<<<<<<< HEAD
   m_Father: {fileID: 1306935120}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -675,10 +674,6 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1805647856}
   m_RootOrder: 11
-=======
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
->>>>>>> Oakley
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -777,7 +772,6 @@ GameObject:
   - component: {fileID: 621721918}
   - component: {fileID: 621721915}
   - component: {fileID: 621721919}
-  - component: {fileID: 621721918}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player
@@ -791,19 +785,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 621721913}
-<<<<<<< HEAD
-  m_LocalRotation: {x: -0.2020059, y: -0, z: -0, w: 0.9793843}
-  m_LocalPosition: {x: 0, y: 0.81000006, z: 4.32}
-=======
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
->>>>>>> Oakley
   m_LocalScale: {x: 0.34894, y: 0.34894, z: 0.34894}
   m_Children:
   - {fileID: 1193638752}
   m_Father: {fileID: 1547308200}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -23.309002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &621721915
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -859,69 +848,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 621721913}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
---- !u!199 &621721918
-ParticleSystemRenderer:
-  serializedVersion: 6
-=======
 --- !u!54 &621721918
 Rigidbody:
->>>>>>> Oakley
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 621721913}
-<<<<<<< HEAD
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 2b818794f8c5ec74486cc1edbd31dccb, type: 2}
-  - {fileID: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_RenderMode: 0
-  m_SortMode: 0
-  m_MinParticleSize: 0
-  m_MaxParticleSize: 0.02
-  m_CameraVelocityScale: 0
-  m_VelocityScale: 0
-  m_LengthScale: 2
-  m_SortingFudge: 0
-  m_NormalDirection: 1
-  m_RenderAlignment: 0
-  m_Pivot: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
-  m_EnableGPUInstancing: 1
-  m_ApplyActiveColorSpace: 1
-  m_VertexStreams: 00010304
-  m_Mesh: {fileID: 0}
-  m_Mesh1: {fileID: 0}
-  m_Mesh2: {fileID: 0}
-  m_Mesh3: {fileID: 0}
-  m_MaskInteraction: 0
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!198 &621721919
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -991,7 +932,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -5455,16 +5396,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
-=======
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &627431738
 GameObject:
   m_ObjectHideFlags: 0
@@ -5506,9 +5437,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Oakley
 --- !u!1 &642750367
 GameObject:
   m_ObjectHideFlags: 0
@@ -6127,7 +6057,7 @@ GameObject:
   - component: {fileID: 1008890393}
   - component: {fileID: 1008890392}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Money Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6517,7 +6447,7 @@ GameObject:
   - component: {fileID: 1369142716}
   - component: {fileID: 1369142715}
   m_Layer: 0
-  m_Name: RawImage
+  m_Name: Money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6665,8 +6595,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1547308199}
-  m_LocalRotation: {x: 0.2164396, y: -0, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: 0, y: 1.42, z: -11.14}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.32, z: -6.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 621721914}
@@ -6681,26 +6611,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1547308199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bb9e3a052c982641b4eb40ecdad6e6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 33d6034d5f7108d4299158bfb6bb6836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Morale: 100
-  Hunger: 100
-  Hydration: 100
-  Cleanliness: 100
-  Warmth: 100
-  Money: 0
-  Name: 
-  Level: 1
-  Experience: 0
-  DaysSurvived: 0
+  playerData:
+    Morale: 0
+    Hunger: 0
+    Hydration: 0
+    Cleanliness: 0
+    Warmth: 0
+    Money: 0
+    Name: 
+    Level: 0
+    Experience: 0
+    DaysSurvived: 0
   GameOver: 0
   UIHunger: 100
   UIHydration: 100
   UICleanliness: 100
   UIWarmth: 100
   UIMorale: 100
-  AOEEffect: 0
+  AOEEffect: 1
   AOERange: 0
   actionTimer: {fileID: 0}
 --- !u!1 &1786148912
@@ -6757,15 +6688,9 @@ Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1786148912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-=======
-  m_GameObject: {fileID: 1547308199}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.32, z: -8}
->>>>>>> Oakley
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7056,11 +6981,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4020662349596962, guid: ce366198a715a934fa76ef2aa5d0d7a7, type: 2}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 6
-=======
-      value: 8
->>>>>>> Oakley
       objectReference: {fileID: 0}
     - target: {fileID: 1109020777537366, guid: ce366198a715a934fa76ef2aa5d0d7a7, type: 2}
       propertyPath: m_Name
@@ -7134,6 +7055,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1422823498389218, guid: 25db6baad6d485349b7b5254b52347d0,
         type: 2}
+    - target: {fileID: 224403813288073920, guid: 4433858a2243e6d4181cc6628f64ab86,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -89.359985
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4433858a2243e6d4181cc6628f64ab86, type: 2}
   m_IsPrefabAsset: 0

@@ -13,9 +13,11 @@ public class PlayerAction : ScriptableObject {
     public bool aoeEffect;
     [SerializeField]
     public bool Running = false;
+    GameObject player;
 
     public void Init(int DurationSeconds, bool AOEEffect)
     {
+        player = GameObject.Find("Player");
         currentDuration = 0;
         maxDuration = DurationSeconds;
         aoeEffect = AOEEffect;
@@ -31,8 +33,8 @@ public class PlayerAction : ScriptableObject {
             {
                 if (aoeEffect)
                 {
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().AOEEffect = false;
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().AOERange = 0;
+                    player.GetComponent<PlayerManager>().AOEEffect = false;
+                    player.GetComponent<PlayerManager>().AOERange = 0;
                     Running = false;
                     currentDuration = 0;
                 }
