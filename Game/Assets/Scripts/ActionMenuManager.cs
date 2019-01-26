@@ -42,14 +42,13 @@ public class ActionMenuManager : MonoBehaviour {
 
             var effectsBar = textArea.GetChild(2);
             effectsBar.GetChild(1).GetComponent<Text>().text = item.ModifierList.Where(i => i.Key == StatType.Hunger).Sum(i => i.Value).ToString();
-            effectsBar.GetChild(3).GetComponent<Text>().text = item.ModifierList.Where(i => i.Key == StatType.Hyrdration).Sum(i => i.Value).ToString();
+            effectsBar.GetChild(3).GetComponent<Text>().text = item.ModifierList.Where(i => i.Key == StatType.Hydration).Sum(i => i.Value).ToString();
             effectsBar.GetChild(5).GetComponent<Text>().text = item.ModifierList.Where(i => i.Key == StatType.Warmth).Sum(i => i.Value).ToString();
             effectsBar.GetChild(7).GetComponent<Text>().text = item.ModifierList.Where(i => i.Key == StatType.Cleanliness).Sum(i => i.Value).ToString();
             count++;
         }
 
         anim.Play("SlideIn");
-        int mej = 0;
     }
 
     private Button.ButtonClickedEvent ShopItemBought(int i)

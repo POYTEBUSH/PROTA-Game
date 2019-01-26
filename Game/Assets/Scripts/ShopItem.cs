@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum StatType{
     Hunger,
-    Hyrdration,
+    Hydration,
     Warmth,
     Cleanliness
 }

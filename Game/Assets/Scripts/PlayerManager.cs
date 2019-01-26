@@ -4,19 +4,10 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    public float Morale = 100f;
-    public float Hunger = 100f;
-    public float Hydration = 100f;
-    public float Cleanliness = 100f;
-    public float Warmth = 100f;
 
-    public float Money;
     private int MaxMoneyStore;
-    public string Name;
-
-    public int Level = 1;
-    public float Experience;
-    public int DaysSurvived;
+    [SerializeField]
+    public PlayerStats playerData;
 
     public bool GameOver;
 
@@ -54,11 +45,7 @@ public class PlayerManager : MonoBehaviour
         WarmthBarProg = GameObject.Find("WarmthBarProg").GetComponent<RawImage>();
         MoraleBarProg = GameObject.Find("MoraleBarProg").GetComponent<RawImage>();
 
-        Morale = 100f;
-        Hunger = 100f;
-        Hydration = 100f;
-        Cleanliness = 100f;
-        Warmth = 100f;
+        playerData = SaveSystem.LoadPlayerData();
 
         ChatLogger.SendChatMessage("Game Started, Good luck!", Color.yellow);
         AOEEffect = true;
@@ -72,24 +59,24 @@ public class PlayerManager : MonoBehaviour
     {
         actionTimer.Update();
 
-        if (Morale <= 0f)
+        if (playerData.Morale <= 0f)
             GameOver = true;
 
         ReduceStats();
 
-        Morale = (Hunger + Cleanliness + Warmth + Hydration) / 4;
+        playerData.Morale = (playerData.Hunger + playerData.Cleanliness + playerData.Warmth + playerData.Hydration) / 4;
 
-        Morale = Mathf.Clamp(Morale, 0f, 100f);
-        Hunger = Mathf.Clamp(Hunger, 0f, 100f);
-        Cleanliness = Mathf.Clamp(Cleanliness, 0f, 100f);
-        Hydration = Mathf.Clamp(Hydration, 0f, 100f);
-        Warmth = Mathf.Clamp(Warmth, 0f, 100f);
-        Money = Mathf.Clamp(Money, 0f, MaxMoneyStore);
+        playerData.Morale = Mathf.Clamp(playerData.Morale, 0f, 100f);
+        playerData.Hunger = Mathf.Clamp(playerData.Hunger, 0f, 100f);
+        playerData.Cleanliness = Mathf.Clamp(playerData.Cleanliness, 0f, 100f);
+        playerData.Hydration = Mathf.Clamp(playerData.Hydration, 0f, 100f);
+        playerData.Warmth = Mathf.Clamp(playerData.Warmth, 0f, 100f);
+        playerData.Money = Mathf.Clamp(playerData.Money, 0f, MaxMoneyStore);
 
         UpdateHUD();
         CheckForAOE();
 
-        Experience++;
+        playerData.Experience++;
         CheckLevelProgress();
     }
 
@@ -107,34 +94,34 @@ public class PlayerManager : MonoBehaviour
 
     private void ReduceStats()
     {
-        Hunger -= ReduceRateHunger;
-        Hydration -= ReduceRateHydration;
-        Cleanliness -= ReduceRateCleanliness;
-        Warmth -= ReduceRateWarmth;
+        playerData.Hunger -= ReduceRateHunger;
+        playerData.Hydration -= ReduceRateHydration;
+        playerData.Cleanliness -= ReduceRateCleanliness;
+        playerData.Warmth -= ReduceRateWarmth;
     }
 
     private void CheckLevelProgress()
     {
-        if (Experience >= (Level * 120))
+        if (playerData.Experience >= (playerData.Level * 120))
         {
-            Level++;
-            Experience = 0;
-            ChatLogger.SendChatMessage("Leveled Up! Now level " + Level, Color.magenta);
+            playerData.Level++;
+            playerData.Experience = 0;
+            ChatLogger.SendChatMessage("Leveled Up! Now level " + playerData.Level, Color.magenta);
         }
     }
 
     public void SetMaxMoney(int MaxMoney)
     {
-        Mathf.Clamp(Morale, 0f, 1f);
+        Mathf.Clamp(playerData.Morale, 0f, 1f);
     }
 
     public void UpdateHUD()
     {
-        UIHunger = Hunger / 100;
-        UIHydration = Hydration  / 100;
-        UICleanliness = Cleanliness / 100;
-        UIWarmth = Warmth / 100;
-        UIMorale = Morale / 100;
+        UIHunger = playerData.Hunger / 100;
+        UIHydration = playerData.Hydration  / 100;
+        UICleanliness = playerData.Cleanliness / 100;
+        UIWarmth = playerData.Warmth / 100;
+        UIMorale = playerData.Morale / 100;
 
         HungerBarProg.transform.localScale = new Vector3(UIHunger, 1, 1);
         ThirstBarProg.transform.localScale = new Vector3(UIHydration, 1, 1);
@@ -151,5 +138,10 @@ public class PlayerManager : MonoBehaviour
 
         //MoraleBarProg.transform.position = new Vector3(UIMorale, 1, 1);
 
+    }
+
+    public void OnApplicationQuit()
+    {
+        SaveSystem.SavePlayerData(playerData);
     }
 }
