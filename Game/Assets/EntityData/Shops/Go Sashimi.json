@@ -30,18 +30,17 @@
 		},
 		{
 			"ItemName":"Vegetable Gyoza",
-			"ItemDesc":"Vegetable dumplings"
+			"ItemDesc":"Vegetable dumplings",
 			"SpriteName":"gyoza",
 			"Cost":"2.50",
 			"Modifiers":"0:15,2:5"
 		},
 		{
 			"ItemName":"Takoyaki",
-			"ItemDesc":"Japanese street food, similar to British street food except actually digestible"
+			"ItemDesc":"Japanese street food, similar to British street food except actually digestible",
 			"SpriteName":"takoyaki",
 			"Cost":"2",
 			"Modifiers":"0:10,1:-5,2:10,3:-5"
 		}
-		
 	]
 }

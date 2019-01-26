@@ -44,7 +44,7 @@
 		},
 		{
 			"ItemName":"Cheese and Onion Bake",
-			"ItemDesc":"Classic pastry, although it doesn't half smell"
+			"ItemDesc":"Classic pastry, although it doesn't half smell",
 			"SpriteName":"pastie",
 			"Cost":"1.5",
 			"Modifiers":"0:10, 1:-5, 2:5,3:-5"
