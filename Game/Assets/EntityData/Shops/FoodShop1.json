@@ -61,7 +61,7 @@
 			"ItemDesc":"Does anybody really know what these are made of?",
 			"SpriteName":"kebab",
 			"Cost":"3.99",
-			"Modifiers":"0:25,1:-10,3:5"
+			"Modifiers":"0:25,1:-10,3:-5"
 		},
 		{
 			"ItemName":"Chip Butty",
