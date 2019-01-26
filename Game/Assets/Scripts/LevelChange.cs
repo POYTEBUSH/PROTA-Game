@@ -5,13 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class LevelChange : MonoBehaviour
 {
-    public Animator mLevelAnim;
-    private int mLevelToLoad;
+    public Animator animator;
+    private int levelToLoad;
 
-    public void FadeToLevl(int level)
+    private void Start()
     {
-        mLevelToLoad = level;
-        mLevelAnim.SetTrigger("Fade Out");
+        //animator = GetComponent<Animator>();
+    }
+
+    public void FadeToLevel(int level)
+    {
+        levelToLoad = level;
+        animator.SetTrigger("Fade Out");
     }
 
     public void QuitGame ()
@@ -27,6 +32,6 @@ public class LevelChange : MonoBehaviour
 
     public void ChangeLevel()
     {
-        SceneManager.LoadScene(mLevelToLoad);
+        SceneManager.LoadScene(levelToLoad);
     }
 }
