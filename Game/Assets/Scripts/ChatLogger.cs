@@ -10,11 +10,11 @@ public class ChatLogger : MonoBehaviour {
     {
         var ChatWindow = GameObject.FindGameObjectWithTag("ChatContainer");
 
-        if (ChatWindow.transform.childCount >= 5)
+        if (ChatWindow.transform.childCount >= 8)
             Destroy(ChatWindow.transform.GetChild(0).gameObject);
 
         var newMessage = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/ChatMessage"), ChatWindow.transform);
-        newMessage.GetComponent<Text>().text = DateTime.Now.ToShortTimeString() + " | " + message;
+        newMessage.GetComponent<Text>().text = message;
         newMessage.GetComponent<Text>().color = messageColor;
     }
 }
