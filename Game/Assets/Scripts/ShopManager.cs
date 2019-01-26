@@ -19,7 +19,8 @@ public class ShopManager : MonoBehaviour
 
         ShopItems = FileSystem.FromJson<ShopItem>("/EntityData/Shops/FoodShop1.json").ToList();
         int count = 0;
-        foreach (var item in ShopItems.OrderBy(i=>i.Cost))
+        ShopItems = ShopItems.OrderBy(i => i.Cost).ToList();
+        foreach (var item in ShopItems)
         {
             item.ModifierList = new Dictionary<StatType, float>();
             string[] modifierssplit = item.Modifiers.Split(',');
@@ -32,7 +33,7 @@ public class ShopManager : MonoBehaviour
             var pref = GameObject.Instantiate(ShopItemPrefab, this.transform.GetChild(2));
             var buttonInner = pref.transform.GetChild(0);
 
-            pref.GetComponent<Button>().onClick.AddListener(() => ShopItemBought(count));
+            pref.GetComponent<Button>().onClick.AddListener(() => ShopItemBought(item.ItemName));
 
             var image = buttonInner.GetChild(0);
             image.GetComponent<Image>().sprite = Resources.Load<Sprite>("EntityIcons/" + item.SpriteName);
@@ -57,12 +58,21 @@ public class ShopManager : MonoBehaviour
         int mej = 0;
     }
 
-    public void ShopItemBought(int i)
+    public void ShopItemBought(string name)
     {
         //var Player = GameObject.FindGameObjectWithTag("Player");
         //Player.GetComponent<PlayerManager>();
-
-        ChatLogger.SendChatMessage("Button Clicked", Color.white);
+        var item = ShopItems.FirstOrDefault(i => i.ItemName == name);
+        CultureInfo gb = CultureInfo.GetCultureInfo("en-GB");
+        string msg = item.ItemName + " purchased for " + item.Cost.ToString("c2", gb);
+        ChatLogger.SendChatMessage(msg, Color.white);
+        string change = "";
+        foreach (var modifier in item.ModifierList)
+        {
+            change += modifier.Key.ToString() + " " + (modifier.Value < 0 ? "decreased " : "increased ") + "by " + modifier.Value + " | ";
+        }
+        change = change.TrimEnd('|',' ');
+        ChatLogger.SendChatMessage(change, Color.green);
 
         Debug.Log("Button");
     }
