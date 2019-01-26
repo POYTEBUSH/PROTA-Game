@@ -18,7 +18,7 @@ public class ShopManager : MonoBehaviour {
 
         ShopItems = FileSystem.FromJson<ShopItem>("/EntityData/Shops/FoodShop1.json").ToList();
         int count = 0;
-        foreach (var item in ShopItems)
+        foreach (var item in ShopItems.OrderBy(i=>i.Cost))
         {
             item.ModifierList = new Dictionary<StatType, float>();
             string[] modifierssplit = item.Modifiers.Split(',');

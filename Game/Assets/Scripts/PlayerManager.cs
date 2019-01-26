@@ -53,6 +53,8 @@ public class PlayerManager : MonoBehaviour
         Hydration = 100f;
         Cleanliness = 100f;
         Warmth = 100f;
+
+        ChatLogger.SendChatMessage("Game Started, Good luck!", Color.yellow);
     }
 
     //Items list
@@ -84,6 +86,15 @@ public class PlayerManager : MonoBehaviour
         Hydration -= ReduceRateHydration;
         Cleanliness -= ReduceRateCleanliness;
         Warmth -= ReduceRateWarmth;
+
+        if(Hunger <= 0f)
+            ChatLogger.SendChatMessage("You are super hungry, eat some food fast!", Color.red);
+        if (Hydration <= 0f)
+            ChatLogger.SendChatMessage("You are super thirsty, drink something soon!", Color.red);
+        if (Cleanliness <= 0f)
+            ChatLogger.SendChatMessage("You are dirty, oh so dirty!", Color.red);
+        if (Warmth <= 0f)
+            ChatLogger.SendChatMessage("You are bloody freezing", Color.red);
     }
 
     private void CheckLevelProgress()
@@ -92,6 +103,7 @@ public class PlayerManager : MonoBehaviour
         {
             Level++;
             Experience = 0;
+            ChatLogger.SendChatMessage("Leveled Up! Now level " + Level, Color.magenta);
         }
     }
 
