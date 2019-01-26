@@ -9,14 +9,17 @@ public class NPC : MonoBehaviour
     Vector3 startPos = new Vector3(-10.0f, 0.07f, -9.5f);
     Vector3 velocity = new Vector3(1.0f, 0.0f, 0.0f);
     Vector3 otherVelocity = new Vector3(0.0f, 0.0f, 0.0f);
+    Vector3 otherPos = new Vector3();
 
-    Quaternion initialRotation;
+    public Quaternion initialRotation;
 
     bool facingLeft, staring, paying = false;
 
     public float minimumTimeToStay, minimumTimeToPay, minimumToPay;
     
     Rigidbody rb;
+
+    Animator anim;
 
 	// Use this for initialization
 	void Start ()
@@ -39,6 +42,8 @@ public class NPC : MonoBehaviour
         transform.localPosition = startPos;
 
         rb = GetComponent<Rigidbody>();
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -48,6 +53,13 @@ public class NPC : MonoBehaviour
 
         if (transform.localPosition.x * transform.localPosition.x > 110)
             Destroy(transform.gameObject);
+
+        if (staring)
+        {
+            otherPos = GameObject.Find("Capsule").transform.position;
+            otherPos.y = transform.position.y;
+            transform.LookAt(otherPos);
+        }
 
         if (staring && !paying)
         {
@@ -62,7 +74,7 @@ public class NPC : MonoBehaviour
         {
             otherVelocity = collision.transform.GetComponent<Rigidbody>().velocity;
             if (!staring)
-                HandleNPCCollision();
+                HandleNPCCollision(collision);
         }
         else if (collision.transform.CompareTag("Player"))
         {
@@ -81,11 +93,14 @@ public class NPC : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
     }
 
-    private void HandleNPCCollision()
+    private void HandleNPCCollision(Collision collision)
     {
         if (velocity.x == 0.0f)
         {
+            anim.SetBool("staring", false);
             velocity.x = otherVelocity.x;
+            initialRotation = collision.transform.GetComponent<NPC>().initialRotation;
+            transform.rotation = initialRotation;
             if (velocity.x < 0.0f)
                 facingLeft = true;
             else
@@ -115,7 +130,9 @@ public class NPC : MonoBehaviour
         {
             case (1):
                 velocity.x *= -2.0f;
-
+                transform.rotation = initialRotation;
+                transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
+                initialRotation = transform.rotation;
                 if (facingLeft)
                     facingLeft = false;
                 else
@@ -125,6 +142,7 @@ public class NPC : MonoBehaviour
                 velocity.x *= 2.0f;
                 break;
             default:
+                anim.SetBool("staring", true);
                 StartCoroutine(StareAtHomeless());
                 break;
         }
