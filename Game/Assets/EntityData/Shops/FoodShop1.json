@@ -24,7 +24,7 @@
 		{
 			"ItemName":"Steak Bake",
 			"ItemDesc":"Steaming hot pastie, caution will burn tongue!",
-			"SpriteName":"steakbake",
+			"SpriteName":"pastie",
 			"Cost":"1.4",
 			"Modifiers":"0:10,2:15,1:-5"
 		},

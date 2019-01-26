@@ -1,0 +1,47 @@
+{
+    "Items": [
+		{
+			"ItemName":"Salmon Nigiri",
+			"ItemDesc":"Classic sushi dish, although slightly pricey",
+			"SpriteName":"salmonNigiri",
+			"Cost":"3",
+			"Modifiers":"0:20,1:5,2:-5"
+		},
+		{
+			"ItemName":"Tuna Sashimi",
+			"ItemDesc":"Strips of Tuna cut to perfection",
+			"SpriteName":"tunaSashimi",
+			"Cost":"3.50",
+			"Modifiers":"0:20, 1:10, 2:-10"
+		},
+		{
+			"ItemName":"Chicken Katsu Curry",
+			"ItemDesc":"Doesn't contain actual cat",
+			"SpriteName":"katsu",
+			"Cost":"4",
+			"Modifiers":"0:30,2:10, 3:-5"
+		},
+		{
+			"ItemName":"Miso Soup",
+			"ItemDesc":"Miso enjoying this healthy soup",
+			"SpriteName":"miso",
+			"Cost":"2",
+			"Modifiers":"0:10,1:10,2:-10"
+		},
+		{
+			"ItemName":"Vegetable Gyoza",
+			"ItemDesc":"Vegetable dumplings"
+			"SpriteName":"gyoza",
+			"Cost":"2.50",
+			"Modifiers":"0:15,2:5"
+		},
+		{
+			"ItemName":"Takoyaki",
+			"ItemDesc":"Japanese street food, similar to British street food except actually digestible"
+			"SpriteName":"takoyaki",
+			"Cost":"2",
+			"Modifiers":"0:10,1:-5,2:10,3:-5"
+		}
+		
+	]
+}
