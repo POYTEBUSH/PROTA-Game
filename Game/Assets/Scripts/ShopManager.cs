@@ -36,8 +36,15 @@ public class ShopManager : MonoBehaviour {
             textArea.GetChild(0).GetComponent<Text>().text = item.ItemName;
             textArea.GetChild(1).GetComponent<Text>().text = item.ItemDesc;
 
+            var effectsBar = textArea.GetChild(2);
+            effectsBar.GetChild(1).GetComponent<Text>().text = item.ModifierList.Where(i => i.Key == StatType.Hunger).Sum(i => i.Value).ToString();
+            effectsBar.GetChild(3).GetComponent<Text>().text = item.ModifierList.Where(i => i.Key == StatType.Hyrdration).Sum(i => i.Value).ToString();
+            effectsBar.GetChild(5).GetComponent<Text>().text = item.ModifierList.Where(i => i.Key == StatType.Warmth).Sum(i => i.Value).ToString();
+            effectsBar.GetChild(7).GetComponent<Text>().text = item.ModifierList.Where(i => i.Key == StatType.Cleanliness).Sum(i => i.Value).ToString();
+
+
             CultureInfo gb = CultureInfo.GetCultureInfo("en-GB");
-            pref.transform.GetChild(2).transform.GetChild(1).GetComponent<Text>().text = item.Cost.ToString("c2", gb);
+            pref.transform.GetChild(2).transform.GetChild(0).GetComponent<Text>().text = item.Cost.ToString("c2", gb);
         }
 
 

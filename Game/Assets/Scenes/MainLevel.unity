@@ -310,7 +310,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 642750369}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -815,7 +815,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1154664950}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000049488}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000053612}
   m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 2091077373}
@@ -823,7 +823,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.3999939, y: -149.9}
+  m_AnchoredPosition: {x: -0.000061035156, y: -92.16}
   m_SizeDelta: {x: -22.5, y: 197.7}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1154664952
@@ -963,7 +963,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.4001, y: -173.80003}
+  m_AnchoredPosition: {x: 0.00018310547, y: -116.06}
   m_SizeDelta: {x: -22.5, y: -347.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1505044705
@@ -980,13 +980,13 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 10
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_Spacing: 10
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 1
+  m_ChildControlWidth: 0
   m_ChildControlHeight: 0
 --- !u!114 &1505044706
 MonoBehaviour:
@@ -1107,7 +1107,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.00012207031, y: 0}
-  m_SizeDelta: {x: 0, y: 149.9}
+  m_SizeDelta: {x: 0, y: 92.16}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1674647883
 MonoBehaviour:
@@ -1301,5 +1301,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopId: 0
   ShopItems: []
-  ShopItemPrefab: {fileID: 1188515282432906, guid: 47b2de75392685842a340b7a0ce0b63f,
+  ShopItemPrefab: {fileID: 1502675080416844, guid: 908f330d50c839743b1d645cfddf1cb0,
     type: 2}

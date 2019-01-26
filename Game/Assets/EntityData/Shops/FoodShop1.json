@@ -12,14 +12,14 @@
 			"ItemDesc":"Hot beverage favoured by Brits",
 			"SpriteName":"teacup",
 			"Cost":"1",
-			"Modifiers":"1:7,2:10,"
+			"Modifiers":"1:7,2:10"
 		},
 		{
 			"ItemName":"Pot of Tea",
 			"ItemDesc":"Hot beverage favoured by Brits, on the mega scale",
 			"SpriteName":"teapot",
 			"Cost":"3.5",
-			"Modifiers":"1:20,2:25,"
+			"Modifiers":"1:20,2:25"
 		},
 		{
 			"ItemName":"Steak Bake",
