@@ -13,8 +13,9 @@ public class ShopManager : MonoBehaviour
     public List<ShopItem> ShopItems;
     public GameObject ShopItemPrefab;
     public Animation anim;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
 
 
         ShopItems = FileSystem.FromJson<ShopItem>("/EntityData/Shops/Go Sashimi.json").ToList();
@@ -63,22 +64,148 @@ public class ShopManager : MonoBehaviour
         //var Player = GameObject.FindGameObjectWithTag("Player");
         //Player.GetComponent<PlayerManager>();
         var item = ShopItems.FirstOrDefault(i => i.ItemName == name);
-        CultureInfo gb = CultureInfo.GetCultureInfo("en-GB");
-        string msg = item.ItemName + " purchased for " + item.Cost.ToString("c2", gb);
-        ChatLogger.SendChatMessage(msg, Color.white);
-        string change = "";
-        foreach (var modifier in item.ModifierList)
+        
+        string change = ""; bool stateChecker = true;
+
+        if (item.ModifierList.All(i => CheckAddable(i)))
         {
-            change += modifier.Key.ToString() + " " + (modifier.Value < 0 ? "decreased " : "increased ") + "by " + modifier.Value + " | ";
-        }
-        change = change.TrimEnd('|',' ');
-        ChatLogger.SendChatMessage(change, Color.green);
+            foreach (var modifier in item.ModifierList)
+            {
+                change += modifier.Key.ToString() + " " + (modifier.Value < 0 ? "decreased " : "increased ") + "by " + modifier.Value + " | ";
+                AddStat(modifier);
+            }
+            change = change.TrimEnd('|', ' ');
+            CultureInfo gb = CultureInfo.GetCultureInfo("en-GB");
+            string msg = item.ItemName + " purchased for " + item.Cost.ToString("c2", gb);
+            ChatLogger.SendChatMessage(msg, Color.white);
+            ChatLogger.SendChatMessage(change, Color.green);
+        }       
 
         Debug.Log("Button");
     }
 
+    private bool AddStat(KeyValuePair<StatType, float> modifier)
+    {
+        switch (modifier.Key)
+        {
+            case StatType.Hunger:
+                {
+                    if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Hunger + modifier.Value <= 100)
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Hunger += modifier.Value;
+                    else
+                        return false;
+                }
+                return true;
+            case StatType.Hydration:
+                {
+                    if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Hydration + modifier.Value <= 100)
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Hydration += modifier.Value;
+                    else
+                        return false;
+                }
+                return true;
+            case StatType.Warmth:
+                {
+                    if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Warmth + modifier.Value <= 100)
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Warmth += modifier.Value;
+                    else
+                        return false;
+                }
+                return true;
+            case StatType.Cleanliness:
+                {
+                    if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Cleanliness + modifier.Value <= 100)
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Cleanliness += modifier.Value;
+                    else
+                        return false;
+                }
+                return true;
+            default:
+                return true;
+
+        }
+    }
+
+    private bool CheckAddable(KeyValuePair<StatType, float> modifier)
+    {
+        switch (modifier.Key)
+        {
+            case StatType.Hunger:
+                var hungerval = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Hunger + modifier.Value;
+                if (hungerval <= 100 && hungerval > 0)
+                {
+                    return true;
+                }
+                else if(hungerval <= 0)
+                {
+                    ChatLogger.SendChatMessage("You are too hungry for this item. ("+ hungerval+"/100)", Color.red);
+                    return false;
+                }
+                else
+                {
+                    ChatLogger.SendChatMessage("You are not hungry enough to eat this item. (" + hungerval + "/100)", Color.red);
+                    return false;
+                }
+
+            case StatType.Hydration:
+                var hydrationval = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Hydration + modifier.Value;
+                if (hydrationval <= 100 && hydrationval > 0)
+                {
+                    return true;
+                }
+                else if (hydrationval <= 0)
+                {
+                    ChatLogger.SendChatMessage("You are too thirsty for this item. (" + hydrationval + "/100)", Color.red);
+                    return false;
+                }
+                else
+                {
+                    ChatLogger.SendChatMessage("You are not thirsty enough to eat this item. (" + hydrationval + "/100)", Color.red);
+                    return false;
+                }
+
+            case StatType.Warmth:
+                var warmthval = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Warmth + modifier.Value;
+                if (warmthval <= 100 && warmthval > 0)
+                {
+                    return true;
+                }
+                else if (warmthval <= 0)
+                {
+                    ChatLogger.SendChatMessage("You are too cold for this item. (" + warmthval + "/100)", Color.red);
+                    return false;
+                }
+                else
+                {
+                    ChatLogger.SendChatMessage("You are to hot right now. (" + warmthval + "/100)", Color.red);
+                    return false;
+                }
+
+            case StatType.Cleanliness:
+                var cleanlinessval = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Cleanliness + modifier.Value;
+                if (cleanlinessval <= 100 && cleanlinessval > 0)
+                {
+                    return true;
+                }
+                else if (cleanlinessval <= 0)
+                {
+                    ChatLogger.SendChatMessage("You are too dirty for this item. (" + cleanlinessval + "/100)", Color.red);
+                    return false;
+                }
+                else
+                {
+                    ChatLogger.SendChatMessage("You do not fancy this right now. (" + cleanlinessval + "/100)", Color.red);
+                    return false;
+                }
+            default:
+                return false;
+
+        }
+    }
+
     // Update is called once per frame
-    void Update () {
-		
-	}
+    void Update()
+    {
+
+    }
 }

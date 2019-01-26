@@ -62,7 +62,7 @@ public class PlayerManager : MonoBehaviour
         if (playerData.Morale <= 0f)
             GameOver = true;
 
-        ReduceStats();
+        //ReduceStats();
 
         playerData.Morale = (playerData.Hunger + playerData.Cleanliness + playerData.Warmth + playerData.Hydration) / 4;
 
