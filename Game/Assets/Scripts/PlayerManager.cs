@@ -40,8 +40,14 @@ public class PlayerManager : MonoBehaviour
 
     public float UIMorale = 100f;
 
+
+    public bool AOEEffect = true;
+    public int AOERange = 50;
+
+    public PlayerAction actionTimer;
+
     private void Start()
-    {
+    { 
         HungerBarProg = GameObject.Find("HungerBarProg").GetComponent<RawImage>();
         ThirstBarProg = GameObject.Find("ThirstBarProg").GetComponent<RawImage>();
         CleanBarProg = GameObject.Find("CleanlinessBarProg").GetComponent<RawImage>();
@@ -55,11 +61,17 @@ public class PlayerManager : MonoBehaviour
         Warmth = 100f;
 
         ChatLogger.SendChatMessage("Game Started, Good luck!", Color.yellow);
+        AOEEffect = true;
+        AOERange = 75;
+        actionTimer = ScriptableObject.CreateInstance<PlayerAction>();
+        actionTimer.Init(15, true);
     }
 
     //Items list
     private void Update()
     {
+        actionTimer.Update();
+
         if (Morale <= 0f)
             GameOver = true;
 
@@ -75,9 +87,22 @@ public class PlayerManager : MonoBehaviour
         Money = Mathf.Clamp(Money, 0f, MaxMoneyStore);
 
         UpdateHUD();
+        CheckForAOE();
 
         Experience++;
         CheckLevelProgress();
+    }
+
+    private void CheckForAOE()
+    {
+        if(AOEEffect)
+        {
+            GameObject.FindGameObjectWithTag("AOEDisplay").GetComponent<Light>().spotAngle = AOERange;
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("AOEDisplay").GetComponent<Light>().spotAngle = 0;
+        }
     }
 
     private void ReduceStats()
@@ -86,15 +111,6 @@ public class PlayerManager : MonoBehaviour
         Hydration -= ReduceRateHydration;
         Cleanliness -= ReduceRateCleanliness;
         Warmth -= ReduceRateWarmth;
-
-        if(Hunger <= 0f)
-            ChatLogger.SendChatMessage("You are super hungry, eat some food fast!", Color.red);
-        if (Hydration <= 0f)
-            ChatLogger.SendChatMessage("You are super thirsty, drink something soon!", Color.red);
-        if (Cleanliness <= 0f)
-            ChatLogger.SendChatMessage("You are dirty, oh so dirty!", Color.red);
-        if (Warmth <= 0f)
-            ChatLogger.SendChatMessage("You are bloody freezing", Color.red);
     }
 
     private void CheckLevelProgress()
