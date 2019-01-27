@@ -2,7 +2,7 @@
   "Items": [
     {
       "ItemName": "Creggs Bakery",
-      "ItemDesc": "Small warm paties, just fills a spot",
+      "ItemDesc": "Small warm pasties, just fills a spot",
       "SpriteName": "pastie",
       "RequiredLevel": "1"
     },
@@ -17,6 +17,12 @@
       "ItemDesc": "Take a warm night away from the streets.",
       "SpriteName": "bed",
       "RequiredLevel": "10"
-    }
+    },
+	{
+	  "ItemName": "Fresco",
+	  "ItemDesc": "A convenience store with value drinks and shower supplies!",
+	  "SpriteName": "fresco",
+	  "RequiredLevel":"1"
+	}
   ]
 }
