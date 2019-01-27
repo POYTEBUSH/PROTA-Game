@@ -54,17 +54,21 @@ public class NPC : MonoBehaviour
         if (transform.localPosition.x * transform.localPosition.x > 110)
             Destroy(transform.gameObject);
 
-        if (staring)
-        {
-            otherPos = GameObject.Find("Capsule").transform.position;
-            otherPos.y = transform.position.y;
-            transform.LookAt(otherPos);
-        }
+        //if (paying)
+        //{
+        //    StartCoroutine(PayHomeless());
+        //}
+        //if (staring)
+        //{
+        //    otherPos = GameObject.Find("Capsule").transform.position;
+        //    otherPos.y = transform.position.y;
+        //    transform.LookAt(otherPos);
 
-        if (staring && !paying)
-        {
-            StartCoroutine(PayHomeless());
-        }
+        //    if (paying)
+        //    {
+        //        StartCoroutine(PayHomeless());
+        //    }            
+        //}
     }
     
 
@@ -78,6 +82,7 @@ public class NPC : MonoBehaviour
         }
         else if (collision.transform.CompareTag("Player"))
         {
+            transform.LookAt(collision.transform);
             HandlePlayerCollision();
         }
 
@@ -128,7 +133,7 @@ public class NPC : MonoBehaviour
 
         switch (reaction)
         {
-            case (1):
+            case 0:
                 velocity.x *= -2.0f;
                 transform.rotation = initialRotation;
                 transform.Rotate(new Vector3(0.0f, 180.0f, 0.0f));
@@ -138,7 +143,7 @@ public class NPC : MonoBehaviour
                 else
                     facingLeft = true;
                 break;
-            case (2):
+            case 1:
                 velocity.x *= 2.0f;
                 break;
             default:
@@ -154,13 +159,13 @@ public class NPC : MonoBehaviour
         staring = true;
 
         yield return new WaitForSeconds(Random.Range(minimumTimeToStay, minimumTimeToStay + 10));
-
+        StartCoroutine(PayHomeless());
         staring = false;
     }
 
     IEnumerator PayHomeless()
     {
-        paying = true;
+        //paying = true;
 
         yield return new WaitForSeconds(Random.Range(minimumTimeToPay, minimumTimeToPay + 3));
 
@@ -173,9 +178,18 @@ public class NPC : MonoBehaviour
         ///////////////////////////////////////////////////////////////////
         if (staring)
         {
-            GameObject.Find("Money Text").GetComponent<Text>().text = (int.Parse(GameObject.Find("MoneyCounter").GetComponent<Text>().text) + Mathf.FloorToInt(Random.Range(minimumToPay, minimumToPay + 5))).ToString();
+            ChatLogger.SendChatMessage("Should have been payed", Color.cyan);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Money += Mathf.FloorToInt(Random.Range(minimumToPay, minimumToPay + 5));
+            //GameObject.Find("Money Text").GetComponent<Text>().text = (int.Parse(GameObject.Find("MoneyCounter").GetComponent<Text>().text) + Mathf.FloorToInt(Random.Range(minimumToPay, minimumToPay + 5))).ToString();
         }
 
         paying = false;
     }
+}
+
+public enum NPCReactions
+{
+    Repulsed,
+    Busy,
+    Interested
 }

@@ -13,6 +13,7 @@ public struct PlayerStats {
     public float Warmth;
 
     public float Money;
+    public float MaxMoneyStore;
     public string Name;
 
     public int Level;

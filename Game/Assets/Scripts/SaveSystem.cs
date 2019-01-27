@@ -15,6 +15,7 @@ public class SaveSystem : MonoBehaviour {
 
         PlayerPrefs.SetFloat("PlayerMorale", playerdata.Morale);
         PlayerPrefs.SetFloat("PlayerMoney", playerdata.Money);
+        PlayerPrefs.SetFloat("PlayerMaxMoney", playerdata.MaxMoneyStore);
 
         PlayerPrefs.SetInt("PlayerLevel", playerdata.Level);
         PlayerPrefs.SetFloat("PlayerExperience", playerdata.Experience);
@@ -33,6 +34,7 @@ public class SaveSystem : MonoBehaviour {
 
         playerdata.Morale = PlayerPrefs.GetFloat("PlayerMorale");
         playerdata.Money = PlayerPrefs.GetFloat("PlayerMoney");
+        playerdata.MaxMoneyStore = PlayerPrefs.GetFloat("PlayerMaxMoney");
 
         playerdata.Level = PlayerPrefs.GetInt("PlayerLevel");
         playerdata.Experience = PlayerPrefs.GetFloat("PlayerExperience");

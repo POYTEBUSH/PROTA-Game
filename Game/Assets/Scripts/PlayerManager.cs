@@ -1,11 +1,10 @@
 ﻿using System;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
-{
-
-    private int MaxMoneyStore;
+{    
     [SerializeField]
     public PlayerStats playerData;
 
@@ -75,7 +74,7 @@ public class PlayerManager : MonoBehaviour
         playerData.Cleanliness = Mathf.Clamp(playerData.Cleanliness, 0f, 100f);
         playerData.Hydration = Mathf.Clamp(playerData.Hydration, 0f, 100f);
         playerData.Warmth = Mathf.Clamp(playerData.Warmth, 0f, 100f);
-        playerData.Money = Mathf.Clamp(playerData.Money, 0f, MaxMoneyStore);
+        playerData.Money = Mathf.Clamp(playerData.Money, 0f, playerData.MaxMoneyStore);
 
         UpdateHUD();
         CheckForAOE();
@@ -133,17 +132,9 @@ public class PlayerManager : MonoBehaviour
         WarmthBarProg.transform.localScale = new Vector3(UIWarmth, 1, 1);
 
         MoraleBarProg.transform.localScale = new Vector3(UIMorale, 1, 1);
-
-        float playMoney = playerData.Money;
-        MoneyCounter.text = playMoney.ToString();
-
-        //HungerBarProg.transform.position = new Vector3(-727.2, 1, 1);
-        //ThirstBarProg.transform.position = new Vector3(-727.2, 1, 1);
-        //CleanBarProg.transform.position = new Vector3(-727.2, 1, 1);
-        //WarmthBarProg.transform.position = new Vector3(-727.2, 1, 1);
-
-        //MoraleBarProg.transform.position = new Vector3(UIMorale, 1, 1);
-
+        
+        CultureInfo gb = CultureInfo.GetCultureInfo("en-GB");
+        MoneyCounter.text = playerData.Money.ToString("c2", gb);
     }
 
     public void OnApplicationQuit()
