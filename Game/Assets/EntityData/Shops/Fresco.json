@@ -44,7 +44,7 @@
 		},
 		{
 			"ItemName":"Tea",
-			"ItemDesc":"A staple part of any British diet, quenches thirst and makes one feel dignified",
+			"ItemDesc":"A staple part of any British diet, sure to quench thirst",
 			"SpriteName":"teacup",
 			"Cost":"3",
 			"Modifiers":"1:20"
