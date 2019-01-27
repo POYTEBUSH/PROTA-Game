@@ -15,7 +15,7 @@ public class NPC : MonoBehaviour
 
     bool facingLeft, staring, paying = false;
 
-    public float minimumTimeToStay, minimumTimeToPay, minimumToPay, maximumToPay;
+    public float minimumTimeToStay, minimumTimeToPay, minimumToPayPennies, maximumToPayPennies;
     
     Rigidbody rb;
 
@@ -80,6 +80,9 @@ public class NPC : MonoBehaviour
         //        StartCoroutine(PayHomeless());
         //    }            
         //}
+
+        if (!paying)
+            StartCoroutine(PayHomeless());
     }
     
 
@@ -90,6 +93,8 @@ public class NPC : MonoBehaviour
             otherVelocity = collision.transform.GetComponent<Rigidbody>().velocity;
             if (!staring)
                 HandleNPCCollision(collision);
+            else
+                velocity = Vector3.zero;
         }
         else if (collision.transform.CompareTag("Player"))
         {
@@ -172,13 +177,12 @@ public class NPC : MonoBehaviour
         staring = true;
 
         yield return new WaitForSeconds(Random.Range(minimumTimeToStay, minimumTimeToStay + 10));
-        StartCoroutine(PayHomeless());
         staring = false;
     }
 
     IEnumerator PayHomeless()
     {
-        //paying = true;
+        paying = true;
 
         yield return new WaitForSeconds(Random.Range(minimumTimeToPay, minimumTimeToPay + 3));
 
@@ -192,7 +196,8 @@ public class NPC : MonoBehaviour
         if (staring)
         {
             ChatLogger.SendChatMessage("Should have been payed", Color.cyan);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Money += Mathf.FloorToInt(Random.Range(minimumToPay, maximumToPay));
+            float moneyToAdd = (Mathf.FloorToInt(Random.Range(minimumToPayPennies, maximumToPayPennies)) / 100.0f);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Money += moneyToAdd;
             //GameObject.Find("Money Text").GetComponent<Text>().text = (int.Parse(GameObject.Find("MoneyCounter").GetComponent<Text>().text) + Mathf.FloorToInt(Random.Range(minimumToPay, minimumToPay + 5))).ToString();
         }
 
