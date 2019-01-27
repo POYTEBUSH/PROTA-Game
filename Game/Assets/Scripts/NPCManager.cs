@@ -6,27 +6,23 @@ public class NPCManager : MonoBehaviour
 {
 
     public GameObject NPC;
-    public float minSecondsBetweenSpawn;
-    public float maxSecondsBetweenSpawn;
+    public float spawnDelay;
+    public int MaxNPCPopulation;
+
+    int currentPopulationCount;
 
 	// Use this for initialization
 	void Start ()
     {
-        StartCoroutine(SpawnNPC());
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
+        InvokeRepeating("SpawnNPC", 2, spawnDelay);
 	}
 
-    IEnumerator SpawnNPC()
+    void SpawnNPC()
     {
-        yield return new WaitForSeconds(Random.Range(minSecondsBetweenSpawn, maxSecondsBetweenSpawn));
-
-        Instantiate(NPC);
-
-        StartCoroutine(SpawnNPC());
+        if (currentPopulationCount < MaxNPCPopulation)
+        {
+            currentPopulationCount++;
+            Instantiate(NPC, this.transform);
+        }
     }
 }

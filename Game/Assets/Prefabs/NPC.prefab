@@ -983,7 +983,7 @@ GameObject:
   - component: {fileID: 95664533004133376}
   - component: {fileID: 136315356055589076}
   - component: {fileID: 54308726873497196}
-  - component: {fileID: 114429970885256484}
+  - component: {fileID: 114830985316775710}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -2061,7 +2061,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 1
 --- !u!95 &95664533004133376
 Animator:
@@ -2081,7 +2081,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114429970885256484
+--- !u!114 &114830985316775710
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2089,14 +2089,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1966369198337070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c4017a1336d2b488f3c228500d1b4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f2622a13a3d5a848aff570cd7b4b733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialRotation: {x: 0, y: 0, z: 0, w: 0}
-  minimumTimeToStay: 5
-  minimumTimeToPay: 1
-  minimumToPay: 0.5
-  maximumToPay: 2.5
+  PlayerAttractionRate: 1
+  Payout: 0
+  MoveSpeed: 1
+  CurrentTarget: {x: 0, y: 0, z: 0}
+  AttractedToPlayer: 0
 --- !u!136 &136315356055589076
 CapsuleCollider:
   m_ObjectHideFlags: 1
