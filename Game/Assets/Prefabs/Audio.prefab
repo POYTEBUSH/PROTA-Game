@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1374771784404296}
+  m_RootGameObject: {fileID: 1004017809930160}
   m_IsPrefabAsset: 1
---- !u!1 &1374771784404296
+--- !u!1 &1004017809930160
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4278426285644132}
-  - component: {fileID: 114885617306899790}
+  - component: {fileID: 4727660360051694}
+  - component: {fileID: 114271204914130800}
   m_Layer: 0
-  m_Name: SoundManager
+  m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4278426285644132
+--- !u!4 &4727660360051694
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1374771784404296}
+  m_GameObject: {fileID: 1004017809930160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.25667533, y: 5.7807193, z: -12.609405}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,12 +40,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114885617306899790
+--- !u!114 &114271204914130800
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1374771784404296}
+  m_GameObject: {fileID: 1004017809930160}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd735b11e0dc7b1468ec677a55e195e2, type: 3}
@@ -75,4 +75,40 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Busk
+    clip: {fileID: 8300000, guid: b276a7774f2932941a7a0d7ba90fcb14, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Dance
+    clip: {fileID: 8300000, guid: 9721aa2a4fd0a764e9dd3606a9185122, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BeatBox
+    clip: {fileID: 8300000, guid: adf46b33a16c15041a7b24433dab665d, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Violin
+    clip: {fileID: 8300000, guid: b39c8308a02fd8b4cac82c7bec146fb4, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Band
+    clip: {fileID: 8300000, guid: fc8a714d7dd0779429b28748cddcbbd2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Beg
+    clip: {fileID: 8300000, guid: e411bc56376f5844aa07682137d06d25, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
