@@ -12,12 +12,15 @@ public class ShopManager : MonoBehaviour
     public int ShopId;
     public List<ShopItem> ShopItems;
     public GameObject ShopItemPrefab;
-    public Animation anim;
+    public Animator ShopAnimator;
+    private bool ShopOpen;
+
+
     // Use this for initialization
     void Start()
     {
 
-
+        ShopOpen = false;
         ShopItems = FileSystem.FromJson<ShopItem>("/EntityData/Shops/FoodShop1.json").ToList();
         int count = 0;
         ShopItems = ShopItems.OrderBy(i => i.Cost).ToList();
@@ -64,9 +67,9 @@ public class ShopManager : MonoBehaviour
 
         if (item.Cost <= GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Money)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Money -= item.Cost;
             if (item.ModifierList.All(i => CheckAddable(i)))
             {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Money -= item.Cost;
                 string change = "";
                 foreach (var modifier in item.ModifierList)
                 {
@@ -205,9 +208,17 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShopAnimManager()
     {
-
+        if (ShopOpen == false)
+        {
+            ShopAnimator.SetTrigger("OpenShop");
+            ShopOpen = true;
+        }
+        else
+        {
+            ShopAnimator.SetTrigger("CloseShop");
+            ShopOpen = false;
+        }
     }
 }
