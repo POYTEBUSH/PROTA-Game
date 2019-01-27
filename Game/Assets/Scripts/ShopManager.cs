@@ -60,25 +60,30 @@ public class ShopManager : MonoBehaviour
     {
         //var Player = GameObject.FindGameObjectWithTag("Player");
         //Player.GetComponent<PlayerManager>();
-        var item = ShopItems.FirstOrDefault(i => i.ItemName == name);
-        
-        string change = ""; bool stateChecker = true;
+        var item = ShopItems.FirstOrDefault(i => i.ItemName == name);        
 
-        if (item.ModifierList.All(i => CheckAddable(i)))
+        if (item.Cost <= GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Money)
         {
-            foreach (var modifier in item.ModifierList)
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Money -= item.Cost;
+            if (item.ModifierList.All(i => CheckAddable(i)))
             {
-                change += modifier.Key.ToString() + " " + (modifier.Value < 0 ? "decreased " : "increased ") + "by " + modifier.Value + " | ";
-                AddStat(modifier);
+                string change = "";
+                foreach (var modifier in item.ModifierList)
+                {
+                    change += modifier.Key.ToString() + " " + (modifier.Value < 0 ? "decreased " : "increased ") + "by " + modifier.Value + " | ";
+                    AddStat(modifier);
+                }
+                change = change.TrimEnd('|', ' ');
+                CultureInfo gb = CultureInfo.GetCultureInfo("en-GB");
+                string msg = item.ItemName + " purchased for " + item.Cost.ToString("c2", gb);
+                ChatLogger.SendChatMessage(msg, Color.white);
+                ChatLogger.SendChatMessage(change, Color.green);
             }
-            change = change.TrimEnd('|', ' ');
-            CultureInfo gb = CultureInfo.GetCultureInfo("en-GB");
-            string msg = item.ItemName + " purchased for " + item.Cost.ToString("c2", gb);
-            ChatLogger.SendChatMessage(msg, Color.white);
-            ChatLogger.SendChatMessage(change, Color.green);
-        }       
-
-        Debug.Log("Button");
+        }
+        else
+        {
+            ChatLogger.SendChatMessage("You do not have enough money for this item", Color.red);
+        }
     }
 
     private bool AddStat(KeyValuePair<StatType, float> modifier)

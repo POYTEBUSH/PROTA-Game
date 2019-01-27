@@ -18,7 +18,7 @@
 			"ItemName":"Single Room with Breakfast",
 			"ItemDesc":"A comfy room with breakfast included",
 			"SpriteName":"food",
-			"Cost":"50",
+			"Cost":"55",
 			"Modifiers":"0:40,1:40,2:25,3:20"
 		},
 		{

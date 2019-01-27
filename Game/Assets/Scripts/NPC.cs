@@ -15,7 +15,7 @@ public class NPC : MonoBehaviour
 
     bool facingLeft, staring, paying = false;
 
-    public float minimumTimeToStay, minimumTimeToPay, minimumToPay;
+    public float minimumTimeToStay, minimumTimeToPay, minimumToPay, maximumToPay;
     
     Rigidbody rb;
 
@@ -179,7 +179,7 @@ public class NPC : MonoBehaviour
         if (staring)
         {
             ChatLogger.SendChatMessage("Should have been payed", Color.cyan);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Money += Mathf.FloorToInt(Random.Range(minimumToPay, minimumToPay + 5));
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Money += Mathf.FloorToInt(Random.Range(minimumToPay, maximumToPay));
             //GameObject.Find("Money Text").GetComponent<Text>().text = (int.Parse(GameObject.Find("MoneyCounter").GetComponent<Text>().text) + Mathf.FloorToInt(Random.Range(minimumToPay, minimumToPay + 5))).ToString();
         }
 

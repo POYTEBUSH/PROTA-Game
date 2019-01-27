@@ -1,0 +1,22 @@
+{
+  "Items": [
+    {
+      "ItemName": "Creggs Bakery",
+      "ItemDesc": "Small warm paties, just fills a spot",
+      "SpriteName": "pastie",
+      "RequiredLevel": "1"
+    },
+    {
+      "ItemName": "Go Sashimi",
+      "ItemDesc": "Japanese food market, fancy something different?",
+      "SpriteName": "salmonNigiri",
+      "RequiredLevel": "3"
+    },
+    {
+      "ItemName": "Vacation Inn",
+      "ItemDesc": "Take a warm night away from the streets.",
+      "SpriteName": "bed",
+      "RequiredLevel": "10"
+    }
+  ]
+}
