@@ -21,8 +21,10 @@ public class NPC : MonoBehaviour
 
     Animator anim;
 
-	// Use this for initialization
-	void Start ()
+    Transform playerTransform;
+
+    // Use this for initialization
+    void Start ()
     {
         facingLeft = (Random.value > 0.5f);
 
@@ -44,6 +46,8 @@ public class NPC : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         anim = GetComponent<Animator>();
+
+        playerTransform = GameObject.Find("PlayerModel").transform;
     }
 
     // Update is called once per frame
@@ -54,6 +58,13 @@ public class NPC : MonoBehaviour
         if (transform.localPosition.x * transform.localPosition.x > 110)
             Destroy(transform.gameObject);
 
+        if (velocity.x == 0.0f)
+        {
+            otherPos = playerTransform.position;
+            otherPos.y = transform.position.y;
+            rb.angularVelocity = Vector3.zero;
+            transform.LookAt(otherPos);
+        }
         //if (paying)
         //{
         //    StartCoroutine(PayHomeless());
@@ -82,7 +93,9 @@ public class NPC : MonoBehaviour
         }
         else if (collision.transform.CompareTag("Player"))
         {
-            transform.LookAt(collision.transform);
+            //otherPos = collision.transform.position;
+            //otherPos.y = transform.position.y;
+            //transform.LookAt(collision.transform);
             HandlePlayerCollision();
         }
 
