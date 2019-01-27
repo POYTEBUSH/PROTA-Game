@@ -317,8 +317,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2078129359}
-        m_MethodName: ShopAnimManager
+      - m_Target: {fileID: 201053764}
+        m_MethodName: Band
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2404,6 +2404,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4020662349596962, guid: ce366198a715a934fa76ef2aa5d0d7a7,
     type: 2}
   m_PrefabInternal: {fileID: 1984176350}
+--- !u!1001 &557269812
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4727660360051694, guid: 9ee3ca1b966b19f42a344791377abffb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.25667533
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727660360051694, guid: 9ee3ca1b966b19f42a344791377abffb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.7807193
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727660360051694, guid: 9ee3ca1b966b19f42a344791377abffb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -12.609405
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727660360051694, guid: 9ee3ca1b966b19f42a344791377abffb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727660360051694, guid: 9ee3ca1b966b19f42a344791377abffb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727660360051694, guid: 9ee3ca1b966b19f42a344791377abffb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727660360051694, guid: 9ee3ca1b966b19f42a344791377abffb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727660360051694, guid: 9ee3ca1b966b19f42a344791377abffb, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ee3ca1b966b19f42a344791377abffb, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!4 &601516916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4020662349596962, guid: ce366198a715a934fa76ef2aa5d0d7a7,
@@ -2622,7 +2664,7 @@ Prefab:
     - target: {fileID: 224663412275559630, guid: 08e7f2d9bf4e3c6408d008279a90529f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -1070.204
+      value: -1070
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08e7f2d9bf4e3c6408d008279a90529f, type: 2}
@@ -2931,7 +2973,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 642750369}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2940,7 +2982,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 999
   m_TargetDisplay: 0
 --- !u!224 &916397681
 RectTransform:
@@ -3207,8 +3249,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2078129359}
-        m_MethodName: ShopAnimManager
+      - m_Target: {fileID: 201053764}
+        m_MethodName: Beg
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3528,8 +3570,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2078129359}
-        m_MethodName: ShopAnimManager
+      - m_Target: {fileID: 201053764}
+        m_MethodName: Violin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3692,8 +3734,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2078129359}
-        m_MethodName: ShopAnimManager
+      - m_Target: {fileID: 201053764}
+        m_MethodName: Busk
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3894,8 +3936,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2078129359}
-        m_MethodName: ShopAnimManager
+      - m_Target: {fileID: 201053764}
+        m_MethodName: BeatBox
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4311,7 +4353,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 201053764}
-        m_MethodName: TriggerBreakdance
+        m_MethodName: Dance
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4732,12 +4774,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2076823897}
   m_CullTransparentMesh: 0
---- !u!114 &2078129359 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114180431091797296, guid: 08e7f2d9bf4e3c6408d008279a90529f,
-    type: 2}
-  m_PrefabInternal: {fileID: 750115595}
-  m_Script: {fileID: 11500000, guid: 017137060d345be42b0cc4c99ed9060c, type: 3}
 --- !u!1 &2125031718
 GameObject:
   m_ObjectHideFlags: 0
