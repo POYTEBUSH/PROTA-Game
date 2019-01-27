@@ -2095,8 +2095,8 @@ MonoBehaviour:
   initialRotation: {x: 0, y: 0, z: 0, w: 0}
   minimumTimeToStay: 5
   minimumTimeToPay: 1
-  minimumToPay: 0.5
-  maximumToPay: 2.5
+  minimumToPayPennies: 1
+  maximumToPayPennies: 20
 --- !u!136 &136315356055589076
 CapsuleCollider:
   m_ObjectHideFlags: 1
