@@ -173,7 +173,7 @@ public class NPC : MonoBehaviour
         ///////////////////////////////////////////////////////////////////
         if (staring)
         {
-            GameObject.Find("Money Text").GetComponent<Text>().text = (int.Parse(GameObject.Find("Money Text").GetComponent<Text>().text) + Mathf.FloorToInt(Random.Range(minimumToPay, minimumToPay + 5))).ToString();
+            GameObject.Find("Money Text").GetComponent<Text>().text = (int.Parse(GameObject.Find("MoneyCounter").GetComponent<Text>().text) + Mathf.FloorToInt(Random.Range(minimumToPay, minimumToPay + 5))).ToString();
         }
 
         paying = false;
