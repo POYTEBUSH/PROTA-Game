@@ -23,6 +23,12 @@
 	  "ItemDesc": "A convenience store with value drinks and shower supplies!",
 	  "SpriteName": "fresco",
 	  "RequiredLevel":"1"
+	},
+	{
+	  "ItemName": "Burger Prince",
+	  "ItemDesc": "A gourmet burger haven for clogging arteries and enjoying good food!",
+	  "SpriteName": "burger",
+	  "RequiredLevel":"5"
 	}
   ]
 }
