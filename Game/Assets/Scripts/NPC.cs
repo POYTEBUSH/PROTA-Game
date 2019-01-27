@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class NPC : MonoBehaviour
 {
+    public string PlayerName;
 
     Vector3 startPos = new Vector3(-10.0f, 0.07f, -9.5f);
     Vector3 velocity = new Vector3(1.0f, 0.0f, 0.0f);
@@ -195,8 +197,11 @@ public class NPC : MonoBehaviour
         ///////////////////////////////////////////////////////////////////
         if (staring)
         {
-            ChatLogger.SendChatMessage("Should have been payed", Color.cyan);
             float moneyToAdd = (Mathf.FloorToInt(Random.Range(minimumToPayPennies, maximumToPayPennies)) / 100.0f);
+
+            CultureInfo gb = CultureInfo.GetCultureInfo("en-GB");
+
+            ChatLogger.SendChatMessage(PlayerName + " has given you " + moneyToAdd.ToString("c2", gb), Color.cyan);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>().playerData.Money += moneyToAdd;
             //GameObject.Find("Money Text").GetComponent<Text>().text = (int.Parse(GameObject.Find("MoneyCounter").GetComponent<Text>().text) + Mathf.FloorToInt(Random.Range(minimumToPay, minimumToPay + 5))).ToString();
         }

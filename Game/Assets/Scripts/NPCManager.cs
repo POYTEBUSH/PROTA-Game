@@ -8,6 +8,7 @@ public class NPCManager : MonoBehaviour
     public GameObject NPC;
     public float minSecondsBetweenSpawn;
     public float maxSecondsBetweenSpawn;
+    
 
 	// Use this for initialization
 	void Start ()
@@ -25,7 +26,8 @@ public class NPCManager : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(minSecondsBetweenSpawn, maxSecondsBetweenSpawn));
 
-        Instantiate(NPC);
+        var npc = Instantiate(NPC);
+        npc.GetComponent<NPC>().PlayerName = RandomName.Generate();
 
         StartCoroutine(SpawnNPC());
     }
