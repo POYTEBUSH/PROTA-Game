@@ -1,11 +1,17 @@
 {
   "Items": [
     {
-      "StoreName": "Cleggs Bakery",
-      "StoreDesc": "Small warm paties, just fills a spot",
+      "StoreName": "Croggs Bakery",
+      "StoreDesc": "Small warm pasties, just fills a spot",
       "StoreSprite": "pastie",
       "RequiredLevel": "1"
     },
+	{
+	  "StoreName": "Fresco",
+	  "StoreDesc": "A convenience store with value drinks and shower supplies!",
+	  "StoreSprite": "fresco",
+	  "RequiredLevel":"1"
+	},
     {
       "StoreName": "Go Sashimi",
       "StoreDesc": "Japanese food market, fancy something different?",
