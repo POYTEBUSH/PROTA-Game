@@ -26,12 +26,12 @@ public class PlayerManager : MonoBehaviour
 
     Text MoneyCounter;
 
-    public float UIHunger = 100f;
-    public float UIHydration = 100f;
-    public float UICleanliness = 100f;
-    public float UIWarmth = 100f;
+    float UIHunger = 100f;
+    float UIHydration = 100f;
+    float UICleanliness = 100f;
+    float UIWarmth = 100f;
 
-    public float UIMorale = 100f;
+    float UIMorale = 100f;
 
 
     public bool AOEEffect = true;

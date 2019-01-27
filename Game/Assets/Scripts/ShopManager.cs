@@ -31,7 +31,7 @@ public class ShopManager : MonoBehaviour
                 item.ModifierList.Add((StatType)Convert.ToInt32(data[0]), Convert.ToInt32(data[1]));
             }
 
-            var pref = GameObject.Instantiate(ShopItemPrefab, this.transform.GetChild(2));
+            var pref = GameObject.Instantiate(ShopItemPrefab, this.transform.GetChild(1));
             var buttonInner = pref.transform.GetChild(0);
 
             pref.GetComponent<Button>().onClick.AddListener(() => ShopItemBought(item.ItemName));
@@ -54,9 +54,6 @@ public class ShopManager : MonoBehaviour
             buttonInner.GetChild(2).transform.GetChild(0).GetComponent<Text>().text = item.Cost.ToString("c2", gb);
             count++;
         }
-
-        anim.Play("SlideIn");
-        int mej = 0;
     }
 
     public void ShopItemBought(string name)
