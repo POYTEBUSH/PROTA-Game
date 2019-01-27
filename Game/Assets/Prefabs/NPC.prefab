@@ -2092,9 +2092,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c4017a1336d2b488f3c228500d1b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialRotation: {x: 0, y: 0, z: 0, w: 0}
   minimumTimeToStay: 5
   minimumTimeToPay: 1
-  minimumToPay: 1
+  minimumToPay: 0.5
+  maximumToPay: 2.5
 --- !u!136 &136315356055589076
 CapsuleCollider:
   m_ObjectHideFlags: 1
