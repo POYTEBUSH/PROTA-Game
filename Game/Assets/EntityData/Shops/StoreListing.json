@@ -1,10 +1,22 @@
 {
   "Items": [
     {
-      "StoreName": "Croggs Bakery",
-      "StoreDesc": "Small warm pasties, just fills a spot",
-      "StoreSprite": "pastie",
-      "RequiredLevel": "1"
+      "StoreName": "Vacation Inn",
+      "StoreDesc": "Take a warm night away from the streets.",
+      "StoreSprite": "bed",
+      "RequiredLevel": "10"
+    },
+	{
+	  "StoreName": "Burger Prince",
+	  "StoreDesc": "A gourmet burger haven for clogging arteries and enjoying good food!",
+	  "StoreSprite": "burger",
+	  "RequiredLevel":"5"
+	},    
+    {
+      "StoreName": "Go Sashimi",
+      "StoreDesc": "Japanese food market, fancy something different?",
+      "StoreSprite": "salmonNigiri",
+      "RequiredLevel": "3"
     },
 	{
 	  "StoreName": "Fresco",
@@ -12,17 +24,11 @@
 	  "StoreSprite": "fresco",
 	  "RequiredLevel":"1"
 	},
-    {
-      "StoreName": "Go Sashimi",
-      "StoreDesc": "Japanese food market, fancy something different?",
-      "StoreSprite": "salmonNigiri",
-      "RequiredLevel": "3"
-    },
-    {
-      "StoreName": "Vacation Inn",
-      "StoreDesc": "Take a warm night away from the streets.",
-      "StoreSprite": "bed",
-      "RequiredLevel": "10"
+	{
+      "StoreName": "Croggs Bakery",
+      "StoreDesc": "Small warm pasties, just fills a spot",
+      "StoreSprite": "pastie",
+      "RequiredLevel": "1"
     }
   ]
 }

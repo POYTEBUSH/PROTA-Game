@@ -22,10 +22,10 @@ public class ShopListManager : MonoBehaviour {
 
             newShopHolder.transform.GetChild(0).GetComponent<Text>().text = Shops[i].StoreName;
 
-            var startPosY = newShopHolder.transform.GetChild(2).transform.position.y - (64 * Shops.Count-1);
+            var startPosY = newShopHolder.transform.GetChild(2).transform.position.y - (90 * Shops.Count-i);
 
             newShopHolder.transform.GetChild(2).transform.position = new Vector3(newShopHolder.transform.GetChild(2).transform.position.x,
-                startPosY + (64*i),
+                startPosY + (90 * i),
                 newShopHolder.transform.GetChild(2).transform.position.z);
 
             newShopHolder.transform.GetChild(2).GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>("EntityIcons/" + Shops[i].StoreSprite);
