@@ -1,0 +1,60 @@
+{
+    "Items": [
+		{
+			"ItemName":"Deodorant",
+			"ItemDesc":"liquid spray that gives the illusion of cleanliness",
+			"SpriteName":"deodorant",
+			"Cost":"2.5",
+			"Modifiers":"3:15"
+		},
+		{
+			"ItemName":"Bottled Water",
+			"ItemDesc":"7.8/10 Too Much Water",
+			"SpriteName":"water",
+			"Cost":"2.50",
+			"Modifiers":"1:15"
+		},
+		{
+			"ItemName":"Soap",
+			"ItemDesc":"Bar of animal fat that somehow cleanses the skin, just don't drop it",
+			"SpriteName":"soap",
+			"Cost":"2",
+			"Modifiers":"3:10"
+		},
+		{
+			"ItemName":"Shower Gel",
+			"ItemDesc":"Strange viscous liquid that smells delightful",
+			"SpriteName":"showerGel",
+			"Cost":"3",
+			"Modifiers":"3:20"
+		},
+		{
+			"ItemName":"Croaka Cola",
+			"ItemDesc":"Black, sugary goop that tastes great and quenches thirst",
+			"SpriteName":"can",
+			"Cost":"2",
+			"Modifiers":"1:15,2:-5"
+		},
+		{
+			"ItemName":"Fresco's Own Cola",
+			"ItemDesc":"Like regular cola, but cheaper and without most of the taste",
+			"SpriteName":"can",
+			"Cost":"1.60",
+			"Modifiers":"1:10,2:-5"
+		},
+		{
+			"ItemName":"Tea",
+			"ItemDesc":"A staple part of any British diet, sure to quench thirst",
+			"SpriteName":"teacup",
+			"Cost":"3",
+			"Modifiers":"1:20"
+		},
+		{
+			"ItemName":"Toothpaste",
+			"ItemDesc":"A tube of slime that somehow leaves ones breath minty fresh and slows tooth decay",
+			"SpriteName":"tube",
+			"Cost":"1.60",
+			"Modifiers":"3:5"
+		}
+	]
+}

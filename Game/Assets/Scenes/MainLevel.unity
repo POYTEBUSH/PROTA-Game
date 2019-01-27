@@ -328,6 +328,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1605605462}
+        m_MethodName: EnactHotbarAction
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &129750545
@@ -2012,7 +2023,7 @@ Prefab:
     - target: {fileID: 224852457677097398, guid: d45b64f29d4fabc47a8dd0d28834d9f1,
         type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224852457677097398, guid: d45b64f29d4fabc47a8dd0d28834d9f1,
         type: 2}
@@ -2404,6 +2415,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4020662349596962, guid: ce366198a715a934fa76ef2aa5d0d7a7,
     type: 2}
   m_PrefabInternal: {fileID: 1984176350}
+--- !u!1 &465396597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 465396599}
+  - component: {fileID: 465396598}
+  m_Layer: 0
+  m_Name: Shop Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &465396598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 465396597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcb9758675e5ff41b80c7d808c4b082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShopPrefab: {fileID: 1972139349043922, guid: 1dbfc3bb7471fc04997f7127940026a8, type: 2}
+--- !u!224 &465396599
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 465396597}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 0.91927075, z: 0.91927075}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 567, y: 61.499207}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &557269812
 Prefab:
   m_ObjectHideFlags: 0
@@ -2441,7 +2498,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4727660360051694, guid: 9ee3ca1b966b19f42a344791377abffb, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ee3ca1b966b19f42a344791377abffb, type: 2}
@@ -2617,58 +2674,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
---- !u!1001 &750115595
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4871397593126326, guid: 08e7f2d9bf4e3c6408d008279a90529f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 2424.127
-      objectReference: {fileID: 0}
-    - target: {fileID: 4871397593126326, guid: 08e7f2d9bf4e3c6408d008279a90529f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.039978027
-      objectReference: {fileID: 0}
-    - target: {fileID: 4871397593126326, guid: 08e7f2d9bf4e3c6408d008279a90529f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -3.3700001
-      objectReference: {fileID: 0}
-    - target: {fileID: 4871397593126326, guid: 08e7f2d9bf4e3c6408d008279a90529f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4871397593126326, guid: 08e7f2d9bf4e3c6408d008279a90529f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4871397593126326, guid: 08e7f2d9bf4e3c6408d008279a90529f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4871397593126326, guid: 08e7f2d9bf4e3c6408d008279a90529f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4871397593126326, guid: 08e7f2d9bf4e3c6408d008279a90529f, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 224056305001530508, guid: 08e7f2d9bf4e3c6408d008279a90529f,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224663412275559630, guid: 08e7f2d9bf4e3c6408d008279a90529f,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: -1070
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 08e7f2d9bf4e3c6408d008279a90529f, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &776149580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2996,7 +3001,7 @@ RectTransform:
   m_Children:
   - {fileID: 1605605461}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3252,6 +3257,17 @@ MonoBehaviour:
       - m_Target: {fileID: 201053764}
         m_MethodName: Beg
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1605605462}
+        m_MethodName: EnactHotbarAction
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3581,6 +3597,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1605605462}
+        m_MethodName: EnactHotbarAction
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1286733671
@@ -3741,6 +3768,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1605605462}
+        m_MethodName: EnactHotbarAction
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3947,6 +3985,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1605605462}
+        m_MethodName: EnactHotbarAction
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1496910737
@@ -4106,6 +4155,10 @@ MonoBehaviour:
     Experience: 0
     DaysSurvived: 0
   GameOver: 0
+  ReduceRateHunger: 0.02
+  ReduceRateHydration: 0.02
+  ReduceRateCleanliness: 0.02
+  ReduceRateWarmth: 0.02
   AOEEffect: 1
   AOERange: 50
   actionTimer: {fileID: 0}
@@ -4207,6 +4260,7 @@ GameObject:
   - component: {fileID: 1605605461}
   - component: {fileID: 1605605460}
   - component: {fileID: 1605605459}
+  - component: {fileID: 1605605462}
   m_Layer: 0
   m_Name: HotbarPanel
   m_TagString: Untagged
@@ -4267,11 +4321,22 @@ RectTransform:
   m_Father: {fileID: 916397681}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -41, y: -453}
-  m_SizeDelta: {x: -1408.7, y: -840.4}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 380.3, y: 133.8}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1605605462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1605605458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520c6e1f117f08e44a59cff6220762a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1625359775
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,6 +4426,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: TriggerBreakdance
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1605605462}
+        m_MethodName: EnactHotbarAction
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -4834,5 +4910,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -10,10 +10,10 @@ public class PlayerManager : MonoBehaviour
 
     public bool GameOver;
 
-    private float ReduceRateHunger = 0.02f;
-    private float ReduceRateHydration = 0.02f;
-    private float ReduceRateCleanliness = 0.02f;
-    private float ReduceRateWarmth = 0.02f;
+    public float ReduceRateHunger = 0f;
+    public float ReduceRateHydration = 0f;
+    public float ReduceRateCleanliness = 0f;
+    public float ReduceRateWarmth = 0f;
 
     RawImage HungerBarProg;
 
@@ -24,7 +24,7 @@ public class PlayerManager : MonoBehaviour
     RawImage MoraleBarProg;
 
     Text MoneyCounter;
-
+    
     float UIHunger = 100f;
     float UIHydration = 100f;
     float UICleanliness = 100f;
@@ -65,7 +65,7 @@ public class PlayerManager : MonoBehaviour
         if (playerData.Morale <= 0f)
             GameOver = true;
 
-        //ReduceStats();
+        ReduceStats();
 
         playerData.Morale = (playerData.Hunger + playerData.Cleanliness + playerData.Warmth + playerData.Hydration) / 4;
 
@@ -97,10 +97,10 @@ public class PlayerManager : MonoBehaviour
 
     private void ReduceStats()
     {
-        playerData.Hunger -= ReduceRateHunger;
-        playerData.Hydration -= ReduceRateHydration;
-        playerData.Cleanliness -= ReduceRateCleanliness;
-        playerData.Warmth -= ReduceRateWarmth;
+        playerData.Hunger += (ReduceRateHunger * 0.01f);
+        playerData.Hydration += (ReduceRateHydration * 0.01f);
+        playerData.Cleanliness += (ReduceRateCleanliness * 0.01f);
+        playerData.Warmth += (ReduceRateWarmth * 0.01f);
     }
 
     private void CheckLevelProgress()

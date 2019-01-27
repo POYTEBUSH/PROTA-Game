@@ -1,0 +1,53 @@
+{
+    "Items": [
+		{
+			"ItemName":"Bacon Prince",
+			"ItemDesc":"Bacon and Beef Burgers in a bun, whats not to love?",
+			"SpriteName":"burger",
+			"Cost":"6",
+			"Modifiers":"0:30,2:10,1:-5,3:-10"
+		},
+		{
+			"ItemName":"Cheese Burger",
+			"ItemDesc":"Like a regular Beef Burger, but with cheese!",
+			"SpriteName":"burger",
+			"Cost":"4",
+			"Modifiers":"0:15,2:5,1:-5,3:-10"
+		},
+		{
+			"ItemName":"Beef Boy",
+			"ItemDesc":"A classic beef burger with mayo and salad",
+			"SpriteName":"burger",
+			"Cost":"3.5",
+			"Modifiers":"0:10,1:-5,2:5,3:-10"
+		},
+		{
+			"ItemName":"The Colossal",
+			"ItemDesc":"20oz of pure beef and bacon, with cheese, mayo and gherkins. Guaranteed to clog at least one artery!",
+			"SpriteName":"burger",
+			"Cost":"10",
+			"Modifiers":"0:50,2:10,3:-20,1:-15"
+		},
+		{
+			"ItemName":"Milkshake",
+			"ItemDesc":"A delicious creamy drink, made with a selection of dairy ingredients and flavorings",
+			"SpriteName":"shake",
+			"Cost":"4",
+			"Modifiers":"0:5,1:20,2:-10"
+		},
+		{
+			"ItemName":"Vegan Onslaught",
+			"ItemDesc":"Bean burgers pan-fried to perfection and served with vegan mayo, avocado and salad",
+			"SpriteName":"burger",
+			"Cost":"5",
+			"Modifiers":"0:20,1:-5,2:5,3:-5"
+		},
+		{
+			"ItemName":"Lamb Baa-ger",
+			"ItemDesc":"A delicious minted lamb burger served with feta cheese, hummus and salad",
+			"SpriteName":"burger",
+			"Cost":"7",
+			"Modifiers":"0:30,1:-10,2:15,3:-5"
+		}
+	]
+}
