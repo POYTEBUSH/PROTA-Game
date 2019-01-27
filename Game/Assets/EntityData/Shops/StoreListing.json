@@ -1,21 +1,21 @@
 {
   "Items": [
     {
-      "ItemName": "Creggs Bakery",
-      "ItemDesc": "Small warm paties, just fills a spot",
-      "SpriteName": "pastie",
+      "StoreName": "Cleggs Bakery",
+      "StoreDesc": "Small warm paties, just fills a spot",
+      "StoreSprite": "pastie",
       "RequiredLevel": "1"
     },
     {
-      "ItemName": "Go Sashimi",
-      "ItemDesc": "Japanese food market, fancy something different?",
-      "SpriteName": "salmonNigiri",
+      "StoreName": "Go Sashimi",
+      "StoreDesc": "Japanese food market, fancy something different?",
+      "StoreSprite": "salmonNigiri",
       "RequiredLevel": "3"
     },
     {
-      "ItemName": "Vacation Inn",
-      "ItemDesc": "Take a warm night away from the streets.",
-      "SpriteName": "bed",
+      "StoreName": "Vacation Inn",
+      "StoreDesc": "Take a warm night away from the streets.",
+      "StoreSprite": "bed",
       "RequiredLevel": "10"
     }
   ]
